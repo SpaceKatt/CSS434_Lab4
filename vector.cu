@@ -78,6 +78,7 @@ int main(int argc, char** argv) {
 
   // Copy results back
   cudaMemcpy(c, d_c, size, cudaMemcpyDeviceToHost);
+  cudaThreadSynchronize();
 
   // Stop clock
   clock_t timeElapsed = (clock() - start) / (CLOCKS_PER_SEC / 1000000);
